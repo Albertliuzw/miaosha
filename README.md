@@ -18,7 +18,13 @@ CREATE TABLE miaosha_user (
 ) ENGINE=INNODB DEFAULT CHARSET = utf8mb4
 ```
 
+password存的是两次MD5后的密码
+
 两次MD5
 
 1. 用户端：PASS = MD5(明文+固定salt)
+
 2. 服务端：PASS = MD5（用户输入+随机salt）
+
+防止传输过程中泄露密码
+

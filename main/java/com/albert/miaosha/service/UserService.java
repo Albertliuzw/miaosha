@@ -10,6 +10,7 @@ public class UserService {
 
     @Autowired
     private UserDao userDao;
+
     public User getById(int id) {
         return userDao.getById(id);
     }
