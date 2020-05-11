@@ -39,7 +39,7 @@ public class SampleController {
     @RequestMapping("/redis/get")
     @ResponseBody
     public Result<User> redisGet() {
-        User user = redisService.get(UserKey.getById, "" + 1, User.class);
+        User user = redisService.get(UserKey.getById, "" + 2, User.class);
         return Result.success(user);
     }
 
@@ -47,9 +47,9 @@ public class SampleController {
     @ResponseBody
     public Result<Boolean> redisSet() {
         User user = new User();
-        user.setId(1);
-        user.setName("albert");
-        redisService.set(UserKey.getById, "" + 1, user);
+        user.setId(2);
+        user.setName("albert1");
+        redisService.set(UserKey.getById, "" + 2, user);
         return Result.success(true);
     }
 }

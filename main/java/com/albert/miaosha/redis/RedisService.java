@@ -61,6 +61,7 @@ public class RedisService {
             String realKey = prefix.getPrefix() + key;
             int seconds = prefix.expireSeconds();
             if (seconds <= 0) {
+                System.out.println("realkey-> "+realKey+"| |"+ str);
                 jedis.set(realKey, str);
             } else {
                 jedis.setex(realKey, seconds, str);
